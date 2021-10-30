@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { styled } from '@mui/material'
+import { Container, styled } from '@mui/material'
 
 interface Props {
   body: ReactNode
@@ -11,7 +11,7 @@ export const Layout = ({ header, footer, body }: Props) => {
   return (
     <Wrapper>
       {header ? <header>{header}</header> : null}
-      <main>{body}</main>
+      <Container component="main"> {body} </Container>
       {footer ? <footer>{footer}</footer> : null}
     </Wrapper>
   )
