@@ -1,14 +1,13 @@
 import { Layout } from 'components/layout'
 import PokemonList from 'pages/PokemonList'
-import { useQuery } from 'react-query'
-import { fetchPokemons } from 'shared/api'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 function App() {
-  const { data, error, isLoading } = useQuery('allPokemons', fetchPokemons)
-
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Error happened...</p>
-  return <Layout header={'PokeField'} body={<PokemonList />} footer={'Footer'} />
+  return (
+    <>
+      <Layout header={'PokeField'} body={<PokemonList />} footer={<ReactQueryDevtools />} />
+    </>
+  )
 }
 
 export default App
