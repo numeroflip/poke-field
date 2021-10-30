@@ -1,3 +1,4 @@
+import SearchBox from 'components/SearchBox'
 import { useState } from 'react'
 import { useDetailedPokemonDataList } from 'shared/api/hooks'
 
@@ -8,6 +9,7 @@ const PokemonList = () => {
   return (
     <>
       <h1>Pokemon List</h1>
+      <SearchBox onSearch={(query) => console.log('query: ', query)} />
       {pokemonQueryStates.map(({ data, isLoading, error }) => {
         if (error) return 'Error happened'
         if (isLoading) return 'Loading...'
