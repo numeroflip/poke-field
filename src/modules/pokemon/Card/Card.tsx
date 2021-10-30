@@ -9,6 +9,7 @@ import capitalize from '@mui/utils/capitalize'
 
 interface Props {
   name: string
+  onLearnMoreClick: () => void
 }
 
 function PokemonCard(props: Props) {
@@ -34,7 +35,9 @@ function PokemonCard(props: Props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={props.onLearnMoreClick}>
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   )
