@@ -1,9 +1,10 @@
+import { Layout } from 'components/layout'
+import PokemonList from 'pages/PokemonList'
+
 function App() {
   return (
     <>
-      <header>Header</header>
-      <main>Body</main>
-      <footer>Footer</footer>
+      <Layout body={<PokemonList />} />
     </>
   )
 }
